@@ -7,14 +7,14 @@ using UnityEngine.UI;
 public class UI_Manager : MonoBehaviour
 {
 
-    [Header("Secrets")]
+    [Header("Secrets")] //hidden from player's view unless the criteria is met
     [SerializeField] private Button continueButton;
     [SerializeField] private GameObject settingsPanel;
     [SerializeField] private GameObject creditsPanel;
 
     private bool isSettingsOpen = false;
     private bool isCreditsOpen = false;
-    public bool hasData = false;
+    public bool hasData = false; //will be used for enabling or disabling the 'continue button'
 
     private void Start()
     {
