@@ -1,9 +1,8 @@
 using System.Collections;
 using System.Collections.Generic;
-using Unity.VisualScripting;
 using UnityEngine;
 
-public class SimpleBodyState : MoveStateOverride
+public class SimpleRunState : MoveStateOverride
 {
 
     [Header("stats... ")]
@@ -11,7 +10,6 @@ public class SimpleBodyState : MoveStateOverride
     [SerializeField] private float speedMultiplier;
     [SerializeField] private float injuryTreshold;
     bool ctrlClick = false;
-    bool shiftClick = false;
     //[SerializeField] private bool switching;
 
     [Header("Same Layer states")]
@@ -29,7 +27,6 @@ public class SimpleBodyState : MoveStateOverride
         SetChild(DefaultState);
         //brain.SetHeight(new Vector3(0, height, 0));
         ctrlClick = false;
-        shiftClick = false;
     }
     public override void Do()
     {
@@ -38,27 +35,9 @@ public class SimpleBodyState : MoveStateOverride
 
         if (ctrlClick)
         {
-            if (brain.GetCtrInput())
-            {
-                ctrlClick = false;
-                Change(DoAfterCtrl);
-                //switching = false;
-                //Change(DoAfter);
-            }
-        }else
-        {
-            if(!brain.GetCtrInput())
-            {
-                Debug.Log("Released");
-                ctrlClick = true;
-            }
-        }
-
-        if (shiftClick)
-        {
             if (brain.GetShiftInput())
             {
-                shiftClick = false;
+                ctrlClick = false;
                 Change(DoAfterOnShift);
                 //switching = false;
                 //Change(DoAfter);
@@ -68,12 +47,14 @@ public class SimpleBodyState : MoveStateOverride
             if(!brain.GetShiftInput())
             {
                 Debug.Log("Released");
-                shiftClick = true;
+                ctrlClick = true;
             }
         }
+        if(!brain.GetCtrInput())
+        {
+            Change(DoAfterCtrl);
+        }
 
-        if(Input.GetKeyDown(KeyCode.Q))
-        {Debug.Log("Skibo dibo di");}
 
         /*if(brain.wantJump)
         {
@@ -92,3 +73,4 @@ public class SimpleBodyState : MoveStateOverride
         brain.moveMultiplier = 1;
     }
 }
+

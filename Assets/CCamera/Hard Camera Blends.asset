@@ -13,30 +13,8 @@ MonoBehaviour:
   m_Name: Hard Camera Blends
   m_EditorClassIdentifier: 
   m_CustomBlends:
-  - m_From: FreeLook Camera one
-    m_To: FreeLook Camera two
-    m_Blend:
-      m_Style: 0
-      m_Time: 1
-      m_CustomCurve:
-        serializedVersion: 2
-        m_Curve: []
-        m_PreInfinity: 0
-        m_PostInfinity: 0
-        m_RotationOrder: 0
-  - m_From: FreeLook Camera two
-    m_To: FreeLook Camera one
-    m_Blend:
-      m_Style: 0
-      m_Time: 1
-      m_CustomCurve:
-        serializedVersion: 2
-        m_Curve: []
-        m_PreInfinity: 0
-        m_PostInfinity: 0
-        m_RotationOrder: 0
-  - m_From: Virtual Camera one
-    m_To: Virtual Camera two
+  - m_From: Virtual Camera two
+    m_To: Virtual Camera one
     m_Blend:
       m_Style: 0
       m_Time: 2
@@ -46,8 +24,8 @@ MonoBehaviour:
         m_PreInfinity: 0
         m_PostInfinity: 0
         m_RotationOrder: 0
-  - m_From: Virtual Camera two
-    m_To: Virtual Camera one
+  - m_From: Virtual Camera one
+    m_To: Virtual Camera two
     m_Blend:
       m_Style: 0
       m_Time: 2

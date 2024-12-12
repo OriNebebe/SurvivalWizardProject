@@ -20,14 +20,21 @@ public class PlayerInputHandler : MonoBehaviour
         switch (selectedPlayer)
         {
             case SPlayer.one:
-                player[(int)selectedPlayer].GetMovementC().ClearMove();
-                selectedPlayer = SPlayer.two;
-                camSwitch.SwitchCamera(player[(int)selectedPlayer].GetCamera());
+                if(camSwitch.SwitchCamera(player[(int)SPlayer.two].GetCamera()))
+                {
+                    player[(int)selectedPlayer].GetMovementC().ClearMove();
+                    selectedPlayer = SPlayer.two;
+                    player[(int)selectedPlayer].GetMovementC().SetStunn(camSwitch.SwitchTime);
+                }
                 break;
-            case SPlayer.two:
-                player[(int)selectedPlayer].GetMovementC().ClearMove();
-                selectedPlayer = SPlayer.one;
-                camSwitch.SwitchCamera(player[(int)selectedPlayer].GetCamera());
+            case SPlayer.two:             
+                if(camSwitch.SwitchCamera(player[(int)SPlayer.one].GetCamera()))
+                {
+                    player[(int)selectedPlayer].GetMovementC().ClearMove();
+                    selectedPlayer = SPlayer.one;
+                    player[(int)selectedPlayer].GetMovementC().SetStunn(camSwitch.SwitchTime);
+                }
+
                 break;
         }
         //camSwitch.SwitchCamera(player[(int)selectedPlayer].getCamera());
@@ -35,9 +42,12 @@ public class PlayerInputHandler : MonoBehaviour
     private void Update()
     {
         GetCameraRotation();
+        
         HandleMovement(pInput.MoveInput);
         
         HandleJump();
+
+        HandleRandomInputBullshit();
     }
 
     public void HandleMovement(Vector2 dir)
@@ -51,14 +61,16 @@ public class PlayerInputHandler : MonoBehaviour
     public void HandleJump()
     {
        
-        if(pInput.JumpInput)
-        {
-            player[(int)selectedPlayer].GetMovementC().wantJump = true;
-        }else
-        {
-            player[(int)selectedPlayer].GetMovementC().wantJump = false;
-        }
+ 
+        player[(int)selectedPlayer].GetMovementC().wantJump = pInput.JumpInput;
         
+        
+    }
+
+    public void HandleRandomInputBullshit()
+    {
+        player[(int)selectedPlayer].GetMovementC().ctrlWant = pInput.CtrlInput;
+        player[(int)selectedPlayer].GetMovementC().shiftWant = pInput.ShiftInput;
     }
 
     public void GetCameraRotation()

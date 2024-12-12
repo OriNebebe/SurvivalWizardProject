@@ -41,7 +41,7 @@ public partial class @PlayerControlls: IInputActionCollection2, IDisposable
                     ""type"": ""Value"",
                     ""id"": ""a8b412d1-be93-4c48-a998-4ecc02128eaa"",
                     ""expectedControlType"": ""Vector2"",
-                    ""processors"": ""ScaleVector2(x=0.1,y=0.1)"",
+                    ""processors"": """",
                     ""interactions"": """",
                     ""initialStateCheck"": true
                 },
@@ -67,6 +67,15 @@ public partial class @PlayerControlls: IInputActionCollection2, IDisposable
                     ""name"": ""Shift"",
                     ""type"": ""Button"",
                     ""id"": ""bbf8f79e-98d2-4bd1-bc29-a2e01c8ed43d"",
+                    ""expectedControlType"": """",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": false
+                },
+                {
+                    ""name"": ""Ctrl"",
+                    ""type"": ""Button"",
+                    ""id"": ""b78557a8-2777-4ea0-a106-50e2d6f8a539"",
                     ""expectedControlType"": """",
                     ""processors"": """",
                     ""interactions"": """",
@@ -211,7 +220,7 @@ public partial class @PlayerControlls: IInputActionCollection2, IDisposable
                     ""id"": ""c8a8b170-c749-4ec3-a315-4b90ab72536a"",
                     ""path"": ""<Mouse>/delta"",
                     ""interactions"": """",
-                    ""processors"": """",
+                    ""processors"": ""ScaleVector2(x=0.1,y=0.1)"",
                     ""groups"": """",
                     ""action"": ""Look"",
                     ""isComposite"": false,
@@ -227,6 +236,17 @@ public partial class @PlayerControlls: IInputActionCollection2, IDisposable
                     ""action"": ""Shift"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""5a5a7c6c-d0af-446f-8320-687322bd1c7a"",
+                    ""path"": ""<Keyboard>/leftCtrl"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""Ctrl"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
                 }
             ]
         }
@@ -240,6 +260,7 @@ public partial class @PlayerControlls: IInputActionCollection2, IDisposable
         m_DebugPlayer_Jump = m_DebugPlayer.FindAction("Jump", throwIfNotFound: true);
         m_DebugPlayer_Switch = m_DebugPlayer.FindAction("Switch", throwIfNotFound: true);
         m_DebugPlayer_Shift = m_DebugPlayer.FindAction("Shift", throwIfNotFound: true);
+        m_DebugPlayer_Ctrl = m_DebugPlayer.FindAction("Ctrl", throwIfNotFound: true);
     }
 
     ~@PlayerControlls()
@@ -311,6 +332,7 @@ public partial class @PlayerControlls: IInputActionCollection2, IDisposable
     private readonly InputAction m_DebugPlayer_Jump;
     private readonly InputAction m_DebugPlayer_Switch;
     private readonly InputAction m_DebugPlayer_Shift;
+    private readonly InputAction m_DebugPlayer_Ctrl;
     public struct DebugPlayerActions
     {
         private @PlayerControlls m_Wrapper;
@@ -320,6 +342,7 @@ public partial class @PlayerControlls: IInputActionCollection2, IDisposable
         public InputAction @Jump => m_Wrapper.m_DebugPlayer_Jump;
         public InputAction @Switch => m_Wrapper.m_DebugPlayer_Switch;
         public InputAction @Shift => m_Wrapper.m_DebugPlayer_Shift;
+        public InputAction @Ctrl => m_Wrapper.m_DebugPlayer_Ctrl;
         public InputActionMap Get() { return m_Wrapper.m_DebugPlayer; }
         public void Enable() { Get().Enable(); }
         public void Disable() { Get().Disable(); }
@@ -344,6 +367,9 @@ public partial class @PlayerControlls: IInputActionCollection2, IDisposable
             @Shift.started += instance.OnShift;
             @Shift.performed += instance.OnShift;
             @Shift.canceled += instance.OnShift;
+            @Ctrl.started += instance.OnCtrl;
+            @Ctrl.performed += instance.OnCtrl;
+            @Ctrl.canceled += instance.OnCtrl;
         }
 
         private void UnregisterCallbacks(IDebugPlayerActions instance)
@@ -363,6 +389,9 @@ public partial class @PlayerControlls: IInputActionCollection2, IDisposable
             @Shift.started -= instance.OnShift;
             @Shift.performed -= instance.OnShift;
             @Shift.canceled -= instance.OnShift;
+            @Ctrl.started -= instance.OnCtrl;
+            @Ctrl.performed -= instance.OnCtrl;
+            @Ctrl.canceled -= instance.OnCtrl;
         }
 
         public void RemoveCallbacks(IDebugPlayerActions instance)
@@ -387,5 +416,6 @@ public partial class @PlayerControlls: IInputActionCollection2, IDisposable
         void OnJump(InputAction.CallbackContext context);
         void OnSwitch(InputAction.CallbackContext context);
         void OnShift(InputAction.CallbackContext context);
+        void OnCtrl(InputAction.CallbackContext context);
     }
 }

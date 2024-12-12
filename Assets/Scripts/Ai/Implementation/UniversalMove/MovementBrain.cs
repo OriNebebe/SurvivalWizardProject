@@ -1,6 +1,7 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using JetBrains.Annotations;
 using UnityEngine;
 using UnityEngine.Android;
 
@@ -13,22 +14,21 @@ public class MovementBrain : MachineCore
 
     [Header("Ray cast set up stuff")]
     [SerializeField] public float groundRayLenght ;
-    [SerializeField] private float groundRayHeight;
+    [SerializeField] private float groundRayHeightOffset;
     [SerializeField] private float groundRayRadius;
     [SerializeField] private LayerMask groundLayer;
 
-    [Header("Movement stats (the important part)")]
 
-
-    [SerializeField] private float minJumpTime;
-    [SerializeField] float jumpTimer;
-
-    [Header("Movement Data")]
+    [Header("Universal Movement Data")]
     [SerializeField] public Vector3 moveVector;
     [SerializeField] public bool groundCheck{get; private set;}
     [SerializeField] public bool wantJump;
     [SerializeField] GameObject visualPart;
     [SerializeField] Vector3 visualPartDefault;
+    [SerializeField] public float playerHeightMultiplier;
+    [SerializeField] public float moveMultiplier;
+    [SerializeField] public bool ctrlWant;
+    [SerializeField] public bool shiftWant;
 
     // Start is called before the first frame update
     void Awake()
@@ -53,14 +53,14 @@ public class MovementBrain : MachineCore
 
     public bool Grounded()
     {
-        return Physics.SphereCast(transform.position + new Vector3(0, groundRayHeight + groundRayRadius, 0), groundRayRadius, Vector3.down, out hit, groundRayLenght, groundLayer);
+        return Physics.SphereCast(transform.position + new Vector3(0, groundRayHeightOffset + groundRayRadius, 0), groundRayRadius, Vector3.down, out hit, groundRayLenght, groundLayer);
         
     }
 
     private void OnDrawGizmos()
     {
-        Debug.DrawRay(transform.position + new Vector3(0, groundRayHeight, 0), Vector2.down * groundRayLenght, Color.red);
-        if (Physics.SphereCast(transform.position + new Vector3(0, groundRayHeight + groundRayRadius, 0), groundRayRadius, Vector3.down, out hit, groundRayLenght, groundLayer))
+        Debug.DrawRay(transform.position + new Vector3(0, groundRayHeightOffset, 0), Vector2.down * groundRayLenght, Color.red);
+        if (Physics.SphereCast(transform.position + new Vector3(0, groundRayHeightOffset + groundRayRadius, 0), groundRayRadius, Vector3.down, out hit, groundRayLenght, groundLayer))
         {
             Gizmos.color = Color.yellow;
             Gizmos.DrawWireSphere(hit.point, groundRayRadius);
@@ -68,7 +68,7 @@ public class MovementBrain : MachineCore
         else
         {
             Gizmos.color = Color.red;
-            Gizmos.DrawWireSphere(transform.position + new Vector3(0, groundRayHeight - groundRayLenght, 0), groundRayRadius);
+            Gizmos.DrawWireSphere(transform.position + new Vector3(0, groundRayHeightOffset - groundRayLenght, 0), groundRayRadius);
 
         }
     }
@@ -80,7 +80,7 @@ public class MovementBrain : MachineCore
         //Vector3 dir = transform.TransformDirection(Vector3.down);
         Vector3 dir = Vector3.down;
         float dirVel = Vector3.Dot(dir, vel);
-        float x = hit.distance - _hoverHeight;
+        float x = hit.distance - _hoverHeight*playerHeightMultiplier;
         float springForce = (x * _spring) - (dirVel * _damp);
 
         rb.AddForce(dir * springForce);
@@ -96,7 +96,9 @@ public class MovementBrain : MachineCore
 
     public void ClearMove()
     {
+        wantJump = false;
         moveVector = Vector3.zero;
+        sMachine.Set(startState,sMachine);
     }
 
     public void SetMoveVector(Vector3 moveInput)
@@ -110,7 +112,7 @@ public class MovementBrain : MachineCore
         velo = new Vector3(velo.x, 0f, velo.z);
 
         //APPLY FORCES
-        rb.AddForce(((moveVector * _speed) - velo) * _drag / Time.fixedDeltaTime);
+        rb.AddForce(((moveVector * _speed *moveMultiplier) - velo) * _drag / Time.fixedDeltaTime);
     }
 
     public void SetGravity(bool g)
@@ -133,7 +135,7 @@ public class MovementBrain : MachineCore
         rb.velocity = new Vector3(rb.velocity.x,0,rb.velocity.z);
     }
 
-    //cursed workaround
+    //cursed workaround | DONT USE THIS SHIT
     public void ForceMasterState(State forceSt)
     {
         sMachine.Set(forceSt,sMachine);                
@@ -143,5 +145,25 @@ public class MovementBrain : MachineCore
     {
         visualPart.transform.localPosition = visualPartDefault + _offset;
     }
+
+    public void SetStunn(float StunnTime)
+    {
+        
+    }
+
+    
+
+    public bool GetShiftInput()
+    {
+  
+        return shiftWant;
+    }
+    public bool GetCtrInput()
+    {
+
+        return ctrlWant;
+    }
+
+    
     
 }

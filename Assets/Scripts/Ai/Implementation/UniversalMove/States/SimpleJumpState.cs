@@ -18,7 +18,7 @@ public class SimpleJumpState : MoveStateOverride
     public override void Enter()
     {
         brain.ClearVerticalVelo();
-        Debug.Log("i am jumpingg");
+       // Debug.Log("i am jumpingg");
         jumpTimer = jumpTime;
         brain.SetGravity(true);
         brain.AddDirectionalImpulseForce(Vector3.up,jumpForce);
@@ -27,7 +27,7 @@ public class SimpleJumpState : MoveStateOverride
     }
     public override void Do()
     {
-        Debug.Log("i goung up");
+        //Debug.Log("i goung up");
         //Change(DoAfter);
         
         jumpTimer-=Time.deltaTime;

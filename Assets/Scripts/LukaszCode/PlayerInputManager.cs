@@ -12,7 +12,8 @@ public class PlayerInputManager : MonoBehaviour
     [SerializeField] private InputActionReference _lookAction;
     [SerializeField] private InputActionReference _jumpAction;
     [SerializeField] private InputActionReference _switchAction;
-    [SerializeField] private InputActionReference _crouchAction;
+    [SerializeField] private InputActionReference _shiftAction;
+    [SerializeField] private InputActionReference _ctrlAction;
 
     //actions
     private InputAction moveAction;
@@ -20,25 +21,31 @@ public class PlayerInputManager : MonoBehaviour
     private InputAction jumpAction;
     private InputAction switchAction;
 
+    private InputAction shiftAction;
+    private InputAction ctrlAction;
+
 
     //accual variables that are used
     public Vector2 MoveInput { get; private set; }
     public Vector2 LookInput { get; private set; }
     public bool JumpInput { get; private set; }
     public bool SwitchInput { get; private set; }
+    public bool  ShiftInput { get; private set; }
+    public bool  CtrlInput { get; private set; }
 
     //idk. singleton or some shit.
     //public static PlayerInputManager Instance { get; private set; }
 
     private void Awake()
     {
-
+        Cursor.lockState = CursorLockMode.Locked;
         // set up action maps or smth. i forgor
         moveAction = _moveAction;
         lookAction = _lookAction;
         jumpAction = _jumpAction;
         switchAction = _switchAction;
-
+        shiftAction = _shiftAction;
+        ctrlAction = _ctrlAction;
     }
 
     //                  plz make sure to enable and disable all actions. plz dont forget u idiot
@@ -49,6 +56,8 @@ public class PlayerInputManager : MonoBehaviour
         lookAction.Enable();
         jumpAction.Enable();
         switchAction.Enable();
+        shiftAction.Enable();
+        ctrlAction.Enable();
 
         RegisterActions();
     }
@@ -58,6 +67,8 @@ public class PlayerInputManager : MonoBehaviour
         lookAction.Disable();
         jumpAction.Disable();
         switchAction.Disable();
+        shiftAction.Disable();
+        ctrlAction.Disable();
     }
 
     // registering all actions...  here asign scripts activated by buttons
@@ -79,6 +90,13 @@ public class PlayerInputManager : MonoBehaviour
         jumpAction.canceled += context => JumpInput = false;
 
         switchAction.started += context => inputHandler.HandleSwitch();
+
+
+        shiftAction.performed += context => ShiftInput = true;
+        shiftAction.canceled += context => ShiftInput = false;
+
+        ctrlAction.performed += context => CtrlInput = true;
+        ctrlAction.canceled += context => CtrlInput = false;
         //switchAction.canceled += context => SwitchInput = false;
     }
 }

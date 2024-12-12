@@ -17,7 +17,7 @@ public class FallingState : MoveStateOverride
     }
     public override void Do()
     {
-        Debug.Log("i am falling");
+        //Debug.Log("i am falling");
         //Change(DoAfter);
 
     }
