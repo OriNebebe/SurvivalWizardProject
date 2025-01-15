@@ -11,5 +11,8 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/_Scenes/L_Map_1.unity
     guid: ddd72e3dc530f324f9fdbbc513a02a0f
+  - enabled: 1
+    path: Assets/_Scenes/L_2DShelter.unity
+    guid: d72b9b1a1aecf014581ac2b40ecb6094
   m_configObjects:
     com.unity.input.settings.actions: {fileID: -944628639613478452, guid: 10bf870dfbbeba44985dd907ab5cc687, type: 3}
