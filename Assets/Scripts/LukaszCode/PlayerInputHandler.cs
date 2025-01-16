@@ -69,8 +69,10 @@ public class PlayerInputHandler : MonoBehaviour
 
     public void HandleRandomInputBullshit()
     {
-        player[(int)selectedPlayer].GetMovementC().ctrlWant = pInput.CtrlInput;
-        player[(int)selectedPlayer].GetMovementC().shiftWant = pInput.ShiftInput;
+        player[(int)selectedPlayer].GetMovementC().runWant = pInput.RunInput;
+        player[(int)selectedPlayer].GetMovementC().crouchWant = pInput.CrouchInput;
+        player[(int)selectedPlayer].GetMovementC().climbWant = pInput.ClimbInput;
+        player[(int)selectedPlayer].GetMovementC().runeWant = pInput.RuneInput;
     }
 
     public void GetCameraRotation()

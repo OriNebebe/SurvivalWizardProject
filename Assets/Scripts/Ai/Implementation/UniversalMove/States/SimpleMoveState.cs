@@ -10,6 +10,8 @@ public class SimpleMoveState : MoveStateOverride
     [SerializeField] private float speed;
     [SerializeField] private float drag;
 
+    [SerializeField] private float vectorRotationSpeed;
+
     [Header("higher layer state, plz be coutious")]
     public State JumpState;
 
@@ -23,16 +25,9 @@ public class SimpleMoveState : MoveStateOverride
         //Debug.Log("i am moving yo");
         //Change(DoAfter);
         
-        
-        
-        
-        
-        
-        
-        
-        
         if(brain.moveVector != Vector3.zero)
         {
+            brain.RotateTowardsVector(brain.moveVector,vectorRotationSpeed);
            // Debug.Log("IhaveInput");
         }else
         {

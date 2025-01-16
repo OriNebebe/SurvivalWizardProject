@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -10,6 +11,8 @@ public class SimpleRunState : MoveStateOverride
     [SerializeField] private float speedMultiplier;
     [SerializeField] private float injuryTreshold;
     bool ctrlClick = false;
+
+    [SerializeField] String animName;
     //[SerializeField] private bool switching;
 
     [Header("Same Layer states")]
@@ -27,6 +30,10 @@ public class SimpleRunState : MoveStateOverride
         SetChild(DefaultState);
         //brain.SetHeight(new Vector3(0, height, 0));
         ctrlClick = false;
+
+        brain.animator.ResetTrigger(animName);
+        brain.animator.SetFloat("Blend",1);
+        brain.animator.SetTrigger(animName);
     }
     public override void Do()
     {
@@ -35,7 +42,7 @@ public class SimpleRunState : MoveStateOverride
 
         if (ctrlClick)
         {
-            if (brain.GetShiftInput())
+            if (brain.GetCrouchInput())
             {
                 ctrlClick = false;
                 Change(DoAfterOnShift);
@@ -44,13 +51,13 @@ public class SimpleRunState : MoveStateOverride
             }
         }else
         {
-            if(!brain.GetShiftInput())
+            if(!brain.GetCrouchInput())
             {
                 Debug.Log("Released");
                 ctrlClick = true;
             }
         }
-        if(!brain.GetCtrInput())
+        if(!brain.GetRunInput())
         {
             Change(DoAfterCtrl);
         }
@@ -65,6 +72,13 @@ public class SimpleRunState : MoveStateOverride
     }
     public override void FixedDo()
     {
+        if(brain.moveVector != Vector3.zero)
+        {
+            brain.animator.SetBool("Input",true);
+        }else
+        {
+            brain.animator.SetBool("Input",false);
+        }
         //brain.Bounce(hoverHeight,spring,damp);
     }
     public override void Exit()

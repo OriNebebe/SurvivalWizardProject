@@ -80,6 +80,24 @@ public partial class @PlayerControlls: IInputActionCollection2, IDisposable
                     ""processors"": """",
                     ""interactions"": """",
                     ""initialStateCheck"": false
+                },
+                {
+                    ""name"": ""Climb"",
+                    ""type"": ""Button"",
+                    ""id"": ""34e65a99-991a-4d9f-aa1f-f0f32d494764"",
+                    ""expectedControlType"": """",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": false
+                },
+                {
+                    ""name"": ""Rune"",
+                    ""type"": ""Button"",
+                    ""id"": ""60c9656b-2116-4d97-8b5e-e2197a38185d"",
+                    ""expectedControlType"": """",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": false
                 }
             ],
             ""bindings"": [
@@ -247,6 +265,28 @@ public partial class @PlayerControlls: IInputActionCollection2, IDisposable
                     ""action"": ""Ctrl"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""edd7cd50-06ec-4faf-be19-828f4289128b"",
+                    ""path"": ""<Keyboard>/r"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""Climb"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""edd49001-034a-4bf9-8427-90306ad75706"",
+                    ""path"": ""<Keyboard>/e"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""Rune"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
                 }
             ]
         }
@@ -261,6 +301,8 @@ public partial class @PlayerControlls: IInputActionCollection2, IDisposable
         m_DebugPlayer_Switch = m_DebugPlayer.FindAction("Switch", throwIfNotFound: true);
         m_DebugPlayer_Shift = m_DebugPlayer.FindAction("Shift", throwIfNotFound: true);
         m_DebugPlayer_Ctrl = m_DebugPlayer.FindAction("Ctrl", throwIfNotFound: true);
+        m_DebugPlayer_Climb = m_DebugPlayer.FindAction("Climb", throwIfNotFound: true);
+        m_DebugPlayer_Rune = m_DebugPlayer.FindAction("Rune", throwIfNotFound: true);
     }
 
     ~@PlayerControlls()
@@ -333,6 +375,8 @@ public partial class @PlayerControlls: IInputActionCollection2, IDisposable
     private readonly InputAction m_DebugPlayer_Switch;
     private readonly InputAction m_DebugPlayer_Shift;
     private readonly InputAction m_DebugPlayer_Ctrl;
+    private readonly InputAction m_DebugPlayer_Climb;
+    private readonly InputAction m_DebugPlayer_Rune;
     public struct DebugPlayerActions
     {
         private @PlayerControlls m_Wrapper;
@@ -343,6 +387,8 @@ public partial class @PlayerControlls: IInputActionCollection2, IDisposable
         public InputAction @Switch => m_Wrapper.m_DebugPlayer_Switch;
         public InputAction @Shift => m_Wrapper.m_DebugPlayer_Shift;
         public InputAction @Ctrl => m_Wrapper.m_DebugPlayer_Ctrl;
+        public InputAction @Climb => m_Wrapper.m_DebugPlayer_Climb;
+        public InputAction @Rune => m_Wrapper.m_DebugPlayer_Rune;
         public InputActionMap Get() { return m_Wrapper.m_DebugPlayer; }
         public void Enable() { Get().Enable(); }
         public void Disable() { Get().Disable(); }
@@ -370,6 +416,12 @@ public partial class @PlayerControlls: IInputActionCollection2, IDisposable
             @Ctrl.started += instance.OnCtrl;
             @Ctrl.performed += instance.OnCtrl;
             @Ctrl.canceled += instance.OnCtrl;
+            @Climb.started += instance.OnClimb;
+            @Climb.performed += instance.OnClimb;
+            @Climb.canceled += instance.OnClimb;
+            @Rune.started += instance.OnRune;
+            @Rune.performed += instance.OnRune;
+            @Rune.canceled += instance.OnRune;
         }
 
         private void UnregisterCallbacks(IDebugPlayerActions instance)
@@ -392,6 +444,12 @@ public partial class @PlayerControlls: IInputActionCollection2, IDisposable
             @Ctrl.started -= instance.OnCtrl;
             @Ctrl.performed -= instance.OnCtrl;
             @Ctrl.canceled -= instance.OnCtrl;
+            @Climb.started -= instance.OnClimb;
+            @Climb.performed -= instance.OnClimb;
+            @Climb.canceled -= instance.OnClimb;
+            @Rune.started -= instance.OnRune;
+            @Rune.performed -= instance.OnRune;
+            @Rune.canceled -= instance.OnRune;
         }
 
         public void RemoveCallbacks(IDebugPlayerActions instance)
@@ -417,5 +475,7 @@ public partial class @PlayerControlls: IInputActionCollection2, IDisposable
         void OnSwitch(InputAction.CallbackContext context);
         void OnShift(InputAction.CallbackContext context);
         void OnCtrl(InputAction.CallbackContext context);
+        void OnClimb(InputAction.CallbackContext context);
+        void OnRune(InputAction.CallbackContext context);
     }
 }

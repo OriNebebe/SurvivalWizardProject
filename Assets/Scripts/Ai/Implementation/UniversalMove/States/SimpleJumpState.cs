@@ -23,6 +23,9 @@ public class SimpleJumpState : MoveStateOverride
         brain.SetGravity(true);
         brain.AddDirectionalImpulseForce(Vector3.up,jumpForce);
         SetChild(DefaultState);
+        
+        brain.animator.SetBool("Grounded",false);
+        brain.animator.SetTrigger("Jump");
         //SetChild(DefaultState);
     }
     public override void Do()

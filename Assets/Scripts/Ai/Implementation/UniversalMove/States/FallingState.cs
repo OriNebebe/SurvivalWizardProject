@@ -14,6 +14,7 @@ public class FallingState : MoveStateOverride
     {
         brain.SetGravity(true);
         SetChild(DefaultState);
+        brain.animator.SetBool("Falling",true);
     }
     public override void Do()
     {
@@ -33,6 +34,6 @@ public class FallingState : MoveStateOverride
     }
     public override void Exit()
     {
-
+        brain.animator.SetBool("Falling",false);
     }
 }
