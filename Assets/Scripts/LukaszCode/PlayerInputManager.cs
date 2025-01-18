@@ -13,32 +13,56 @@ public class PlayerInputManager : MonoBehaviour
     [SerializeField] private InputActionReference _jumpAction;
     [SerializeField] private InputActionReference _switchAction;
     [SerializeField] private InputActionReference _crouchAction;
+    [SerializeField] private InputActionReference _runAction;
 
+    [SerializeField] private InputActionReference _climbAction;
+    [SerializeField] private InputActionReference _interactAction;
+    [SerializeField] private InputActionReference _runeAction;// i think this is redundant (like runes should be activated by interacting with item, idk tho)
+    [SerializeField] private InputActionReference _dropAction;
+    //[SerializeField] private InputActionReference _cancelAction;
+    
     //actions
     private InputAction moveAction;
     private InputAction lookAction;
     private InputAction jumpAction;
     private InputAction switchAction;
-
+    private InputAction crouchAction;
+    private InputAction runAction;
+    private InputAction climbAction;
+    private InputAction interactAction;
+    private InputAction runeAction;
+    private InputAction dropAction;
 
     //accual variables that are used
     public Vector2 MoveInput { get; private set; }
     public Vector2 LookInput { get; private set; }
     public bool JumpInput { get; private set; }
     public bool SwitchInput { get; private set; }
+    public bool  CrouchInput { get; private set; }
+    public bool  RunInput { get; private set; }
+    public bool  ClimbInput { get; private set; }
+    public bool  InteractInput { get; private set; }
+    public bool  RuneInput { get; private set; }
+    public bool  DropInput { get; private set; }
 
     //idk. singleton or some shit.
     //public static PlayerInputManager Instance { get; private set; }
 
     private void Awake()
     {
-
+        Cursor.lockState = CursorLockMode.Locked;
         // set up action maps or smth. i forgor
         moveAction = _moveAction;
         lookAction = _lookAction;
         jumpAction = _jumpAction;
         switchAction = _switchAction;
-
+        crouchAction = _crouchAction;
+        runAction = _runAction;
+        climbAction = _climbAction;
+        interactAction = _interactAction;
+        runeAction = _runeAction;
+        dropAction = _dropAction;
+        
     }
 
     //                  plz make sure to enable and disable all actions. plz dont forget u idiot
@@ -49,6 +73,13 @@ public class PlayerInputManager : MonoBehaviour
         lookAction.Enable();
         jumpAction.Enable();
         switchAction.Enable();
+        crouchAction.Enable();
+        runAction.Enable();
+
+        climbAction.Enable();
+        interactAction.Enable();
+        runeAction.Enable();
+        dropAction.Enable();
 
         RegisterActions();
     }
@@ -58,6 +89,14 @@ public class PlayerInputManager : MonoBehaviour
         lookAction.Disable();
         jumpAction.Disable();
         switchAction.Disable();
+        crouchAction.Disable();
+        runAction.Disable();
+
+        climbAction.Disable();
+        interactAction.Disable();
+        runeAction.Disable();
+        dropAction.Disable();
+
     }
 
     // registering all actions...  here asign scripts activated by buttons
@@ -79,6 +118,22 @@ public class PlayerInputManager : MonoBehaviour
         jumpAction.canceled += context => JumpInput = false;
 
         switchAction.started += context => inputHandler.HandleSwitch();
+
+
+        crouchAction.performed += context => CrouchInput = true;
+        crouchAction.canceled += context => CrouchInput = false;
+
+        
+        runAction.performed += context => RunInput = true;
+        runAction.canceled += context => RunInput = false;
+
+        
+        
+        climbAction.performed += context => ClimbInput = true;
+        climbAction.canceled += context => ClimbInput = false;
+
+        runeAction.performed += context => RuneInput = true;
+        runeAction.canceled += context => RuneInput = false;
         //switchAction.canceled += context => SwitchInput = false;
     }
 }

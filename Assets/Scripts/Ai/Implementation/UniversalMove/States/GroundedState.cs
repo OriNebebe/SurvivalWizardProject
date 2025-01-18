@@ -25,13 +25,25 @@ public class GroundedState : MoveStateOverride
     {
         brain.SetGravity(false);
         SetChild(DefaultState);
+        brain.animator.SetBool("Grounded",true);
     }
     public override void Do()
     {
         //Debug.Log("i am grounded yo");
         //Change(DoAfter);
         
-        
+        /*
+        if(brain.climbWant)
+        {
+            if(brain.CheckForViableClimb(2))
+            {
+                Debug.Log("Climbeddddd");
+
+            }else
+            {
+                Debug.Log("Not cClimbed");
+            }
+        }*/
         
         
         if(!brain.groundCheck)

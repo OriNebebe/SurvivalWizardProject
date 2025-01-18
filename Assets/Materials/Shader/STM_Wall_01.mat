@@ -22,7 +22,7 @@ Material:
   m_PrefabAsset: {fileID: 0}
   m_Name: STM_Wall_01
   m_Shader: {fileID: -6465566751694194690, guid: 53d1c986d9dbe5440b65d7e84bf57985, type: 3}
-  m_Parent: {fileID: 2100000, guid: f725976d90eb31646a1db7a3b920927d, type: 2}
+  m_Parent: {fileID: -876546973899608171, guid: 53d1c986d9dbe5440b65d7e84bf57985, type: 3}
   m_ModifiedSerializedProperties: 0
   m_ValidKeywords: []
   m_InvalidKeywords: []
@@ -37,33 +37,32 @@ Material:
     serializedVersion: 3
     m_TexEnvs:
     - _2nd_Texture:
-        m_Texture: {fileID: 2800000, guid: 337ac93e12665eb4ba14cd1b0ca57bf3, type: 3}
+        m_Texture: {fileID: 2800000, guid: 43e7843d5e3a62f41a2ed8bd385747d2, type: 3}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _Mask:
-        m_Texture: {fileID: 2800000, guid: fd0a7960ec7974a49b7a34401af4b326, type: 3}
+        m_Texture: {fileID: 2800000, guid: bde10a2642176d14cb078abfcf289660, type: 3}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _Normal:
-        m_Texture: {fileID: 2800000, guid: 0de756e42b8c5514a998ecc02de04449, type: 3}
+        m_Texture: {fileID: 2800000, guid: 7a8be65734a93fc49aca732fcf50e57e, type: 3}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _Texture:
-        m_Texture: {fileID: 2800000, guid: 17d86cba6d82c28418f9788157e1358c, type: 3}
+        m_Texture: {fileID: 2800000, guid: b849444d32b0d014f89eea7ab00e6c7c, type: 3}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     m_Ints: []
     m_Floats:
-    - _2ndTextureHight: 40.5
+    - _2ndTextureHight: 0
     - _BUILTIN_QueueControl: 0
     - _Blend2: 1000
-    - _Metalic: 0
-    - _Noise: 0.009
-    - _NormalStrength: 1.54
-    - _Opacity: 0.3
-    - _Smoothness: 0
-    - _Tiling: 0.00002
-    - _Tiling2: -0.06
-    - _inTINTsity: 0.65
-    m_Colors: []
+    - _Noise: 0.0182
+    - _NormalStrength: 3.96
+    - _Opacity: 0.65
+    - _Tiling: 0.08
+    - _Tiling2: 0.03
+    - _inTINTsity: 0.293
+    m_Colors:
+    - _Tint: {r: 0.9339623, g: 0.92746884, b: 0.8590691, a: 0}
   m_BuildTextureStacks: []

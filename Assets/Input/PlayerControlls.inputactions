@@ -19,7 +19,7 @@
                     "type": "Value",
                     "id": "a8b412d1-be93-4c48-a998-4ecc02128eaa",
                     "expectedControlType": "Vector2",
-                    "processors": "ScaleVector2(x=0.1,y=0.1)",
+                    "processors": "",
                     "interactions": "",
                     "initialStateCheck": true
                 },
@@ -45,6 +45,33 @@
                     "name": "Shift",
                     "type": "Button",
                     "id": "bbf8f79e-98d2-4bd1-bc29-a2e01c8ed43d",
+                    "expectedControlType": "",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
+                },
+                {
+                    "name": "Ctrl",
+                    "type": "Button",
+                    "id": "b78557a8-2777-4ea0-a106-50e2d6f8a539",
+                    "expectedControlType": "",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
+                },
+                {
+                    "name": "Climb",
+                    "type": "Button",
+                    "id": "34e65a99-991a-4d9f-aa1f-f0f32d494764",
+                    "expectedControlType": "",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
+                },
+                {
+                    "name": "Rune",
+                    "type": "Button",
+                    "id": "60c9656b-2116-4d97-8b5e-e2197a38185d",
                     "expectedControlType": "",
                     "processors": "",
                     "interactions": "",
@@ -189,7 +216,7 @@
                     "id": "c8a8b170-c749-4ec3-a315-4b90ab72536a",
                     "path": "<Mouse>/delta",
                     "interactions": "",
-                    "processors": "",
+                    "processors": "ScaleVector2(x=0.1,y=0.1)",
                     "groups": "",
                     "action": "Look",
                     "isComposite": false,
@@ -203,6 +230,39 @@
                     "processors": "",
                     "groups": "",
                     "action": "Shift",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "5a5a7c6c-d0af-446f-8320-687322bd1c7a",
+                    "path": "<Keyboard>/leftCtrl",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Ctrl",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "edd7cd50-06ec-4faf-be19-828f4289128b",
+                    "path": "<Keyboard>/r",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Climb",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "edd49001-034a-4bf9-8427-90306ad75706",
+                    "path": "<Keyboard>/e",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Rune",
                     "isComposite": false,
                     "isPartOfComposite": false
                 }

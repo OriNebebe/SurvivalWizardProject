@@ -15,4 +15,5 @@ EditorBuildSettings:
     path: Assets/_Scenes/L_2DShelter.unity
     guid: d72b9b1a1aecf014581ac2b40ecb6094
   m_configObjects:
+    com.unity.input.settings: {fileID: 11400000, guid: e4bfe1c3dafac9041bf833d1b8a50dec, type: 2}
     com.unity.input.settings.actions: {fileID: -944628639613478452, guid: 10bf870dfbbeba44985dd907ab5cc687, type: 3}

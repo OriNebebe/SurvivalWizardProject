@@ -7,133 +7,93 @@ ModelImporter:
   - first:
       type: UnityEngine:Material
       assembly: UnityEngine.CoreModule
-      name: Handles
-    second: {fileID: 2100000, guid: ccbe3376df0ee0141908728173759541, type: 2}
+      name: Curtains
+    second: {fileID: 2100000, guid: f1776d1e6831b874894c0f5097fa9455, type: 2}
   - first:
       type: UnityEngine:Material
       assembly: UnityEngine.CoreModule
-      name: Handles.001
-    second: {fileID: 2100000, guid: fe68a52aadd355c4fbf06fa9146032fc, type: 2}
+      name: DoorBoarders
+    second: {fileID: 2100000, guid: e93a48c14e42ba3419384853c05a9c5e, type: 2}
   - first:
       type: UnityEngine:Material
       assembly: UnityEngine.CoreModule
-      name: M_BBoarder_01
-    second: {fileID: 2100000, guid: c8dd132045e114947af1887e7426b89a, type: 2}
+      name: Exit_01
+    second: {fileID: 2100000, guid: a1db9594392145746987d1521c9ffc12, type: 2}
   - first:
       type: UnityEngine:Material
       assembly: UnityEngine.CoreModule
-      name: M_BFloor_01P
-    second: {fileID: 2100000, guid: 0e44328d88631f04f812cd133e85086c, type: 2}
+      name: Exit_02
+    second: {fileID: 2100000, guid: 95700c8605223624c8ec15b7b2bdb237, type: 2}
   - first:
       type: UnityEngine:Material
       assembly: UnityEngine.CoreModule
-      name: M_BFloor_02P
-    second: {fileID: 2100000, guid: 1bdecd8714e31a94da34314d3df3f259, type: 2}
+      name: FrogShopWhite
+    second: {fileID: 2100000, guid: 12c0af8a7f41adf4e884e619d05fd185, type: 2}
   - first:
       type: UnityEngine:Material
       assembly: UnityEngine.CoreModule
-      name: M_BFloor_02P.002
-    second: {fileID: 2100000, guid: ba8f08ec4233c6043ac1a8df4166d424, type: 2}
+      name: Glass_01
+    second: {fileID: 2100000, guid: c3e37af6d0bf0bf48b096b1f9291e55b, type: 2}
   - first:
       type: UnityEngine:Material
       assembly: UnityEngine.CoreModule
-      name: M_BFloor_02P.004
-    second: {fileID: 2100000, guid: dca0d3b8df6f8934ca965a1d7fc9d6dc, type: 2}
+      name: Glass_02
+    second: {fileID: 2100000, guid: ea4d7b976eedec54e93b1663d89a44f0, type: 2}
   - first:
       type: UnityEngine:Material
       assembly: UnityEngine.CoreModule
-      name: M_BWall_04
-    second: {fileID: 2100000, guid: 34c4941488412ed46aeda30bfe73076f, type: 2}
+      name: Ground_01
+    second: {fileID: 2100000, guid: a608caeee5ab1ed45997cbaca5e613ca, type: 2}
   - first:
       type: UnityEngine:Material
       assembly: UnityEngine.CoreModule
-      name: M_BWall_04.001
-    second: {fileID: 2100000, guid: 6c03c04e6dfc2c64eb3c75513d0b5f74, type: 2}
+      name: Ground_02
+    second: {fileID: 2100000, guid: f725976d90eb31646a1db7a3b920927d, type: 2}
   - first:
       type: UnityEngine:Material
       assembly: UnityEngine.CoreModule
-      name: M_BWall_05
-    second: {fileID: 2100000, guid: 4a0d2639f46f80f41ac845c2c6055cd9, type: 2}
+      name: Ground_03
+    second: {fileID: 2100000, guid: e4792456f1d41bc48928cec6f40adf2e, type: 2}
   - first:
       type: UnityEngine:Material
       assembly: UnityEngine.CoreModule
-      name: M_BWall_05.001
-    second: {fileID: 2100000, guid: 3ca04597a9e3ae744aaae7b01f5715a8, type: 2}
+      name: Ground_04
+    second: {fileID: 2100000, guid: 247c6a206d09e4048a74593d0c8e1585, type: 2}
   - first:
       type: UnityEngine:Material
       assembly: UnityEngine.CoreModule
-      name: M_BWall_05.002
-    second: {fileID: 2100000, guid: 27c7ce12421789a41836c19f0ace30bf, type: 2}
+      name: Insides
+    second: {fileID: 2100000, guid: 908a7998768c3344db67e38fdc8be9fc, type: 2}
   - first:
       type: UnityEngine:Material
       assembly: UnityEngine.CoreModule
-      name: M_BWall_05.003
-    second: {fileID: 2100000, guid: 7cabb486ff98f1245bd8391b2db7ff1d, type: 2}
+      name: Metal_01
+    second: {fileID: 2100000, guid: f48f2b1ebfc141f48a29fbab3fc9d50d, type: 2}
   - first:
       type: UnityEngine:Material
       assembly: UnityEngine.CoreModule
-      name: M_Curtains
-    second: {fileID: 2100000, guid: ada85a872a9a5564cb345f4b5904ce78, type: 2}
+      name: Metal_02
+    second: {fileID: 2100000, guid: 856cc63e88243694b8bf66080ce74504, type: 2}
   - first:
       type: UnityEngine:Material
       assembly: UnityEngine.CoreModule
-      name: M_Curtains.001
-    second: {fileID: 2100000, guid: 279f5a83e3b2f4740b228055596d3651, type: 2}
+      name: Metal_03
+    second: {fileID: 2100000, guid: f48f2b1ebfc141f48a29fbab3fc9d50d, type: 2}
   - first:
       type: UnityEngine:Material
       assembly: UnityEngine.CoreModule
-      name: M_DoorBoarders
-    second: {fileID: 2100000, guid: 05cbe35446d42f946b3012d50f7d9cc2, type: 2}
+      name: Metal_04
+    second: {fileID: 2100000, guid: e1838d4c728d47e4daf27f9c9417cf05, type: 2}
   - first:
       type: UnityEngine:Material
       assembly: UnityEngine.CoreModule
-      name: M_DoorBoarders.001
-    second: {fileID: 2100000, guid: 2207e66c6b4ba484bae12eba72cf235a, type: 2}
+      name: Metal_05
+    second: {fileID: 2100000, guid: f48f2b1ebfc141f48a29fbab3fc9d50d, type: 2}
   - first:
       type: UnityEngine:Material
       assembly: UnityEngine.CoreModule
-      name: M_Inside_00
-    second: {fileID: 2100000, guid: fe3708ea4d19fe64ebb1885a923cd732, type: 2}
-  - first:
-      type: UnityEngine:Material
-      assembly: UnityEngine.CoreModule
-      name: M_Inside_00.001
-    second: {fileID: 2100000, guid: c4f90e2378d6f1549851264ad0d38270, type: 2}
-  - first:
-      type: UnityEngine:Material
-      assembly: UnityEngine.CoreModule
-      name: M_Inside_00.002
-    second: {fileID: 2100000, guid: 39a6eef1e149ec44e9687de8b2e9aa15, type: 2}
-  - first:
-      type: UnityEngine:Material
-      assembly: UnityEngine.CoreModule
-      name: M_Window_01
-    second: {fileID: 2100000, guid: 3620efdcbafa7ae40bc6463c07b96972, type: 2}
-  - first:
-      type: UnityEngine:Material
-      assembly: UnityEngine.CoreModule
-      name: M_Window_01.001
-    second: {fileID: 2100000, guid: 87429461e92af6247b6dc4a944af4417, type: 2}
-  - first:
-      type: UnityEngine:Material
-      assembly: UnityEngine.CoreModule
-      name: M_Window_02
-    second: {fileID: 2100000, guid: e39b8c8332bf5e64e94a03bf24939681, type: 2}
-  - first:
-      type: UnityEngine:Material
-      assembly: UnityEngine.CoreModule
-      name: Material.002
-    second: {fileID: 2100000, guid: 42a6eb755243ae8489a7df0383fdf661, type: 2}
-  - first:
-      type: UnityEngine:Material
-      assembly: UnityEngine.CoreModule
-      name: MetalPipes
-    second: {fileID: 2100000, guid: c21f4759b52892540a954a4be66f59eb, type: 2}
-  - first:
-      type: UnityEngine:Material
-      assembly: UnityEngine.CoreModule
-      name: Railing
-    second: {fileID: 2100000, guid: dfbb43a638ca64643bfd6ae35e3d8283, type: 2}
+      name: Metal__01
+    second: {fileID: 2100000, guid: e1838d4c728d47e4daf27f9c9417cf05, type: 2}
   - first:
       type: UnityEngine:Material
       assembly: UnityEngine.CoreModule
@@ -142,13 +102,38 @@ ModelImporter:
   - first:
       type: UnityEngine:Material
       assembly: UnityEngine.CoreModule
-      name: Shop.001
-    second: {fileID: 2100000, guid: 2cd4954e31c667e4e8fb4fd3d96597a2, type: 2}
+      name: ShopDeco
+    second: {fileID: 2100000, guid: 3274c7c99cf15264386d4de6e8241dc8, type: 2}
   - first:
       type: UnityEngine:Material
       assembly: UnityEngine.CoreModule
-      name: ShopDeco.001
-    second: {fileID: 2100000, guid: 097c5a5332f69204a9eaa3b05b10e87e, type: 2}
+      name: Wall_01
+    second: {fileID: 2100000, guid: 8b573bd3da3cac6448e2e73c22f7f982, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Wall_02
+    second: {fileID: 2100000, guid: e43cff62e24bf064a94123f3a70501e1, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Wall_03
+    second: {fileID: 2100000, guid: 247c6a206d09e4048a74593d0c8e1585, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Wall_04
+    second: {fileID: 2100000, guid: f725976d90eb31646a1db7a3b920927d, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Wall_06
+    second: {fileID: 2100000, guid: a608caeee5ab1ed45997cbaca5e613ca, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: WindowBoarders
+    second: {fileID: 2100000, guid: d0c711c7e3d92ce4daf6b08b83c2d8db, type: 2}
   materials:
     materialImportMode: 2
     materialName: 0

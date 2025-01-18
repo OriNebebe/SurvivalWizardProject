@@ -74,6 +74,12 @@ public abstract class State : MonoBehaviour
         childState?.ExitChild();
     }
 
+    public void ExitAll()
+    {
+        Exit();
+        childState?.ExitAll();
+    }
+
     public void SetCore(MachineCore _core)
     {
         branchMachine = new StateMachine();

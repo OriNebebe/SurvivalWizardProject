@@ -14,10 +14,11 @@ public class FallingState : MoveStateOverride
     {
         brain.SetGravity(true);
         SetChild(DefaultState);
+        brain.animator.SetBool("Falling",true);
     }
     public override void Do()
     {
-        Debug.Log("i am falling");
+        //Debug.Log("i am falling");
         //Change(DoAfter);
 
     }
@@ -33,6 +34,6 @@ public class FallingState : MoveStateOverride
     }
     public override void Exit()
     {
-
+        brain.animator.SetBool("Falling",false);
     }
 }
