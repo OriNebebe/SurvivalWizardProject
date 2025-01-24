@@ -54,13 +54,15 @@ Material:
         m_Offset: {x: 0, y: 0}
     m_Ints: []
     m_Floats:
+    - _AddRimlight: 1
     - _Max: 1
     - _Min: 0.3
     - _QueueControl: 0
     - _QueueOffset: 0
+    - _RimHardness: 0.15
     - _RimStrength: 5
     - _ShadePlanes: 0.49
     m_Colors:
-    - _Color: {r: 0.30460125, g: 0.32041264, b: 0.34905657, a: 1}
-    - _RimColor: {r: 0.8410591, g: 0.41176474, b: 0.9607843, a: 0}
+    - _Color: {r: 0.29316482, g: 0.31005856, b: 0.33962262, a: 1}
+    - _RimColor: {r: 0.7924528, g: 0.785445, b: 0.6018156, a: 0}
   m_BuildTextureStacks: []

@@ -134,6 +134,21 @@ ModelImporter:
       assembly: UnityEngine.CoreModule
       name: WindowBoarders
     second: {fileID: 2100000, guid: d0c711c7e3d92ce4daf6b08b83c2d8db, type: 2}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: NM_WallsFlesh_512x512
+    second: {fileID: 2800000, guid: 98220ff697d5a8a4da6d64092864a795, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: T_WallsFlesh_512x512
+    second: {fileID: 2800000, guid: 1f5bc1bb174bcca4b8e668c724fd8114, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: Untitledddd.003
+    second: {fileID: 2800000, guid: 9a915468e9ed64d4cb06dcf5e9961f3e, type: 3}
   materials:
     materialImportMode: 2
     materialName: 0

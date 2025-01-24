@@ -58,12 +58,12 @@ Material:
     - _BUILTIN_QueueControl: 0
     - _Blend2: 1000
     - _InTINTsity: 0.75
-    - _Metalic: 0.5
+    - _Metalic: 0.3
     - _Noise: 0.2
     - _NormalStrength: 2
     - _Opacity: 0.65
     - _QueueControl: 0
-    - _Smoothness: 0.2
+    - _Smoothness: 0.043
     - _Tiling: 0.08
     - _Tiling2: 0.03
     - _inTINTsity: 0.811
