@@ -49,6 +49,10 @@ Material:
   m_SavedProperties:
     serializedVersion: 3
     m_TexEnvs:
+    - _2ndTexture:
+        m_Texture: {fileID: 2800000, guid: 63572e5568cdd1f4382233109e0172f5, type: 3}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
     - _2nd_Texture:
         m_Texture: {fileID: 2800000, guid: 4fd7d8b01792b324ba55aba32b8e7714, type: 3}
         m_Scale: {x: 1, y: 1}
@@ -62,7 +66,7 @@ Material:
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _Texture:
-        m_Texture: {fileID: 2800000, guid: 43e7843d5e3a62f41a2ed8bd385747d2, type: 3}
+        m_Texture: {fileID: 2800000, guid: 283f897e4925411ebbaa758b4cb13fc2, type: 3}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     m_Ints: []
@@ -71,20 +75,23 @@ Material:
     - _AddRimlight: 1
     - _BUILTIN_QueueControl: 0
     - _Blend2: 1000
-    - _InTINTsity: 0.9
+    - _InTINTsity: 1
     - _Metalic: 0.761
     - _Metallic: 0.1
-    - _Noise: 0.2
+    - _Noise: 0.194
+    - _NoiseIntensity: -0.49
     - _NormalStrength: 3.88
-    - _Opacity: 0.6
+    - _Opacity: 0.64
     - _QueueControl: 0
     - _RimStrength: 5.7
     - _Smoothness: 0.09
     - _Tiling: 0.08
     - _Tiling2: 0.03
+    - _UseColorInsteadOfTexture: 0
     - _inTINTsity: 0.811
     m_Colors:
     - _Color: {r: 0.745283, g: 0.20741367, b: 0.20741367, a: 0}
+    - _MainColorTint: {r: 0.9433962, g: 0.12904951, b: 0.12904951, a: 0}
     - _RimColor: {r: 0.5471698, g: 0.04903879, b: 0.04903879, a: 0}
     - _Tint: {r: 0.7924528, g: 0.02616591, b: 0.056216285, a: 0}
   m_BuildTextureStacks: []

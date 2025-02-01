@@ -49,6 +49,10 @@ Material:
   m_SavedProperties:
     serializedVersion: 3
     m_TexEnvs:
+    - _2ndTexture:
+        m_Texture: {fileID: 2800000, guid: 63572e5568cdd1f4382233109e0172f5, type: 3}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
     - _2nd_Texture:
         m_Texture: {fileID: 2800000, guid: 43e7843d5e3a62f41a2ed8bd385747d2, type: 3}
         m_Scale: {x: 1, y: 1}
@@ -70,15 +74,17 @@ Material:
     - _2ndTextureHight: 40.5
     - _BUILTIN_QueueControl: 0
     - _Blend2: 1000
-    - _InTINTsity: 0.102
+    - _InTINTsity: 0.316
     - _Metalic: 0
-    - _Noise: 0.017
+    - _Noise: 0.076
+    - _NoiseIntensity: -0.95
     - _NormalStrength: 0.57
-    - _Opacity: 0.127
+    - _Opacity: 0.51
     - _QueueControl: 0
     - _Smoothness: 0
     - _Tiling: 0.08
     - _Tiling2: -0.1
     - _inTINTsity: 0.327
-    m_Colors: []
+    m_Colors:
+    - _MainColorTint: {r: 0.5849056, g: 0.5849056, b: 0.5849056, a: 0}
   m_BuildTextureStacks: []

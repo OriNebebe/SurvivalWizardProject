@@ -37,7 +37,7 @@ Material:
     serializedVersion: 3
     m_TexEnvs:
     - _2ndTexture:
-        m_Texture: {fileID: 0}
+        m_Texture: {fileID: 2800000, guid: 4fd7d8b01792b324ba55aba32b8e7714, type: 3}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _2nd_Texture:
@@ -61,11 +61,13 @@ Material:
     - _2ndTextureHight: 40.5
     - _BUILTIN_QueueControl: 0
     - _Blend2: 1000
+    - _Contrast: 0.6
     - _InTINTsity: 0.465
     - _Metalic: 0
-    - _Noise: 0.017
+    - _Noise: 0.169
+    - _NoiseIntensity: -0.15
     - _NormalStrength: 0.54
-    - _Opacity: 0.144
+    - _Opacity: 0.67
     - _QueueControl: 0
     - _Smoothness: 0
     - _Tiling: 0.04

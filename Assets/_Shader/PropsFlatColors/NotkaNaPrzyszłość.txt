@@ -1,0 +1,7 @@
+Ogólnie to nie powinniśmy mieć kolorów rozwalonych na 15k shaderów, ale na ten moment potrzebowałam zobaczyć, jak wyglądają poszczególne kolory.
+
+To do: ColorAtlas i dopasowanie odpowiednich UV
+
+Z wyrazami szacunku,
+
+Kanclerz Dziur w Serze (Szwajcarski)

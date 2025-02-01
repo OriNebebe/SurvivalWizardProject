@@ -38,7 +38,7 @@ ModelImporter:
       type: UnityEngine:Material
       assembly: UnityEngine.CoreModule
       name: Glass_02
-    second: {fileID: 2100000, guid: ea4d7b976eedec54e93b1663d89a44f0, type: 2}
+    second: {fileID: 2100000, guid: c3e37af6d0bf0bf48b096b1f9291e55b, type: 2}
   - first:
       type: UnityEngine:Material
       assembly: UnityEngine.CoreModule
@@ -63,7 +63,7 @@ ModelImporter:
       type: UnityEngine:Material
       assembly: UnityEngine.CoreModule
       name: Insides
-    second: {fileID: 2100000, guid: 908a7998768c3344db67e38fdc8be9fc, type: 2}
+    second: {fileID: 2100000, guid: 65e6a95cdb58b274d9d328c5ccde9303, type: 2}
   - first:
       type: UnityEngine:Material
       assembly: UnityEngine.CoreModule
@@ -133,7 +133,7 @@ ModelImporter:
       type: UnityEngine:Material
       assembly: UnityEngine.CoreModule
       name: WindowBoarders
-    second: {fileID: 2100000, guid: d0c711c7e3d92ce4daf6b08b83c2d8db, type: 2}
+    second: {fileID: 2100000, guid: ae1e7e9be009c1348a53bcaced9c04ce, type: 2}
   - first:
       type: UnityEngine:Texture2D
       assembly: UnityEngine.CoreModule
