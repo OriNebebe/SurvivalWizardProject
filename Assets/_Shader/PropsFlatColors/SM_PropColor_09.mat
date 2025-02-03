@@ -22,7 +22,7 @@ Material:
   m_PrefabAsset: {fileID: 0}
   m_Name: SM_PropColor_09
   m_Shader: {fileID: -6465566751694194690, guid: bce51f22ffcdc594b9763b3ada516305, type: 3}
-  m_Parent: {fileID: -876546973899608171, guid: bce51f22ffcdc594b9763b3ada516305, type: 3}
+  m_Parent: {fileID: 2100000, guid: 875d71c26638e4b4db7d71b5225cac59, type: 2}
   m_ModifiedSerializedProperties: 0
   m_ValidKeywords: []
   m_InvalidKeywords: []
