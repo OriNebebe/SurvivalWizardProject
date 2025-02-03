@@ -65,7 +65,7 @@ Material:
     - _InterseptionPower: 0.01
     - _Metallic: 0
     - _Noise: 0.0182
-    - _NormalStrength: 1.71
+    - _NormalStrength: 0
     - _NormalStrength_1: 2.02
     - _OcculusionStrength: 0
     - _Opacity: 0.093
