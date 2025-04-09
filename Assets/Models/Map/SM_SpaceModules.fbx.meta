@@ -32,6 +32,11 @@ ModelImporter:
   - first:
       type: UnityEngine:Material
       assembly: UnityEngine.CoreModule
+      name: Shop
+    second: {fileID: 2100000, guid: 7015f07dea42dea4da0be35363a2a469, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
       name: Wall_01
     second: {fileID: 2100000, guid: 247c6a206d09e4048a74593d0c8e1585, type: 2}
   - first:
